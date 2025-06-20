@@ -12,7 +12,7 @@ const Professor = db.define('Professor', {
   },
 
   }, {
-  tableName: 'Professors',   // opcional: se quiser nome de tabela diferente
+  tableName: 'Professores',   // opcional: se quiser nome de tabela diferente
   timestamps: false   
   
 });

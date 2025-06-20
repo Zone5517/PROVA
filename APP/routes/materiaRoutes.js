@@ -13,4 +13,7 @@ router.get('/contar', materiaController.contarMaterias);
 
 router.get('/', materiaController.listarMaterias);
 
+router.delete('/:id', materiaController.deleteMateria);
+
+
 module.exports = router;

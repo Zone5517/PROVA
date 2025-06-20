@@ -43,3 +43,20 @@ exports.listarMaterias = async (req, res) => {
     res.status(500).json({ error: 'Erro ao listar matérias', detalhes: error.message });
   }
 };
+
+// Função para deletar uma matéria
+exports.deleteMateria = async (req, res) => {
+  try {
+    const materia = await Materia.findByPk(req.params.id);
+    
+    if (!materia) {
+      return res.status(404).json({ error: 'Matéria não encontrada' });
+    }
+
+    // Deleta a matéria
+    await materia.destroy();
+    res.json({ message: 'Matéria deletada com sucesso' });
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao deletar matéria', detalhes: error.message });
+  }
+};
