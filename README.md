@@ -11,10 +11,7 @@
   - [👨‍🏫 Listar um aluno](#listar-aluno)
   - [👨‍🏫 Criar um professor](#criar-um-professor)
   - [📒 Criar uma materia](#criar-materia)
-  - [💻 Criar um Command](#criar-um-commando)
-  - [📦 Migrations do Projeto](#migrations)
-  - [🌱 Seeds do Projeto](#seeds)
-- [🧵 Subindo um Worker (Consumer)](#subindo-um-worker-consumer)
+- [🧵 Teste da Tabela (postgreSQL)](#teste-tabela)
 - [📦 Bibliotecas Utilizadas](#bibliotecas-utilizadas)
 - [📁 Estrutura de Diretórios (raiz)](#estrutura-de-diretorios-raiz)
 - [🧾 Como Criar um Novo Documento Swagger](#swagger)
@@ -129,7 +126,14 @@ Substitua os valores conforme necessário:
   -H "Content-Type: application/json" \
   -d '{"nome":"Matemática", "carga_horaria":40}'
 
-    # Deletar professor por ID: novamente mude o numero no final confrome o id do professor /1
+    # Deletar materia por ID: novamente mude o numero no final conforme o id da materia /1
     ...
-    curl -X DELETE http://localhost:3000/professore/2
->>>>>>> 9cc0656 (primeiro commit)
+    curl -X DELETE http://localhost:3000/materias/1
+```
+
+  ### 💻 Teste da Tabela  <a name="teste-tabela"></a>
+Exemplo
+```js
+docker ps # ira listar todos os containers assim precisando copiar o nome que contenha a porta 5432:5433
+![Diagrama da rede Docker](./docker-ps.png)
+```
