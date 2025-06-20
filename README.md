@@ -139,10 +139,9 @@ ira listar todos os containers assim precisando copiar o nome que contenha a por
 
 # em seguida de o comando "docker exec -it  prova-main-db-1 bash" para se conectar a tabela
 # apos isso execute "psql -U postgres -d escola" e ira ficar no chat "escola=#"
-# e assim escrevendo "\dt" ira mostrar uma tabela com Alunos, professores e materia
-```js
+# e assim escrevendo "\dt" ira mostrar uma tabela com Alunos, Professores e Materia
+```
+   ### tabela
 ![Tabela](./tabela.jpeg)
-```js
 apos isso voce ira conseguir acessar as informações de cada uma com o comando "SELECT * FROM "Alunos";"
 precisando so trocar Alunos por professor ou materia.
-```
