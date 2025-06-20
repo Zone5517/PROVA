@@ -1,7 +1,9 @@
-<<<<<<< HEAD
+
 # PROVA
-=======
+=====================================================================
 # Unifaat :: Devweb :: PROVA <a name="Projeto de Sistema de Gerenciamento Escolar Infantil"></a>
+
+#### para executar os comandos pode ser usado o proprio terminal bash do vs code ou o insomnia"
 
 ## 📑 Sumário
 
@@ -11,11 +13,10 @@
   - [👨‍🏫 Listar um aluno](#listar-aluno)
   - [👨‍🏫 Criar um professor](#criar-um-professor)
   - [📒 Criar uma materia](#criar-materia)
-- [🧵 Teste da Tabela (postgreSQL)](#teste-tabela)
-- [📦 Bibliotecas Utilizadas](#bibliotecas-utilizadas)
-- [📁 Estrutura de Diretórios (raiz)](#estrutura-de-diretorios-raiz)
-- [🧾 Como Criar um Novo Documento Swagger](#swagger)
-- [🐳 Containers e Imagens Docker](#containers-e-imagens-docker)
+- [📆 Teste da Tabela (postgreSQL)](#teste-tabela)
+- [📚 Bibliotecas Utilizadas](#bibliotecas-utilizadas)
+- [🗂 Estrutura de Diretórios (raiz)](estrutura-de-diretorios-raiz)
+- [🎈 Containers e Imagens Docker](containers-e-imagens-docker)
 
 ---
 
@@ -29,25 +30,35 @@
    git clone https://github.com/Zone5517/PROVA.git
    ```
 
-2. Entrar na pasta do projeto:
+2. Configure as variáveis de ambiente no arquivo .env:
+
+   ```sh
+    DB_HOST=db
+    DB_PORT=5432
+    DB_USER=postgres
+    DB_PASS=postgres
+    DB_NAME=escola
+   ```
+
+3. Entrar na pasta do projeto:
 
    ```sh
    cd '.\final 1.0\'
    ```
 
-3. Instalar as dependências:
+4. Instalar as dependências:
 
    ```sh
    npm install
    ```
 
-4. Subir a aplicação com Docker Compose:
+5. Subir a aplicação com Docker Compose:
 
    ```sh
    docker compose up --build
    ```
 
-5. Acesse a API no navegador ou em ferramentas como Insomnia/Postman:
+6. Acesse a API no navegador ou em ferramentas como Insomnia/Postman:
 
    ```sh
    http://localhost:3000
@@ -61,7 +72,7 @@
 
 ## 👨‍🔬 Como Criar API <a name="Testando-API"></a>
 
-### 👨‍🎓 Criar um aluno <a name="criar-aluno"></a>
+## 👨‍🎓 Criar um aluno <a name="criar-aluno"></a>
 
 Exemplo
 ```js
@@ -70,7 +81,7 @@ curl -X POST http://localhost:3000/alunos \
   -d '{"nome":"Lucas","idade":7}'
 ```
 
-### 👩‍🎓 Listar alunos: <a name="Listar-aluno"></a>
+## 👩‍🎓 Listar alunos: <a name="Listar-aluno"></a>
 
 ```js
 curl http://localhost:3000/alunos
@@ -85,13 +96,13 @@ curl http://localhost:3000/alunos
 
 ```
 
-### 👩‍🏫 Criar um Professor <a name="criar-um-professor"></a>
+## 👩‍🏫 Criar um Professor <a name="criar-um-professor"></a>
 ```js
 curl -X POST http://localhost:3000/professores \
   -H "Content-Type: application/json" \
   -d '{"nome": "Ana", "disciplina": "Matemática"}'
 ```
-### 👩‍🏫 Listar professor: <a name="Listar-aluno"></a>
+## 👩‍🏫 Listar professor: <a name="Listar-aluno"></a>
 
 ```js
  curl http://localhost:3000/professores
@@ -109,7 +120,7 @@ curl -X POST http://localhost:3000/professores \
     curl -X DELETE http://localhost:3000/professore/2
 ```
 
-### 📒 Criar uma materia: <a name="Criar-materia"></a>
+## 📒 Criar uma materia: <a name="Criar-materia"></a>
 
 ```js
  curl http://localhost:3000/materias
@@ -131,7 +142,7 @@ Substitua os valores conforme necessário:
     curl -X DELETE http://localhost:3000/materias/1
 ```
 
-  ### 💻 Teste da Tabela  <a name="teste-tabela"></a>
+  ## 💻 Teste da Tabela  <a name="teste-tabela"></a>
 Exemplo
 ```js
 docker ps 
@@ -141,9 +152,80 @@ ira listar todos os containers assim precisando copiar o nome que contenha a por
 # apos isso execute "psql -U postgres -d escola" e ira ficar no chat "escola=#"
 # e assim escrevendo "\dt" ira mostrar uma tabela com Alunos, Professores e Materia
 ```
-   ### tabela
+   ## Tabela
 ![Tabela](./tabela.jpeg)
 
+```js
+ apos isso voce ira conseguir acessar as informações de cada uma com o comando "SELECT * FROM "Alunos"; precisando so trocar Alunos por professor ou materia.
+```
 
-apos isso voce ira conseguir acessar as informações de cada uma com o comando "SELECT * FROM "Alunos";"
-precisando so trocar Alunos por professor ou materia.
+## 📚 Bibliotecas Utilizadas <a name="bibliotecas-utilizadas"></a>
+
+| Biblioteca            | Finalidade                                                                 |
+|-----------------------|----------------------------------------------------------------------------|
+| `express`             | 	Framework web para construção de rotas servidores HTTP.        |
+| `sequelize`               | ORM para manipulação de banco relacional com JS          |
+| `pg`              | Driver PostgreSQL para Node.js     |
+| `nodemon`                  | (dev) Reinicia servidor automaticamente no dev |
+| `dotenv`           | Carregamento de variáveis de ambiente     |
+---
+
+## 📁 Estrutura de Diretórios (raiz) <a name="estrutura-de-diretorios-raiz"></a>
+
+| Caminho / Pasta             | Descrição                                                                                                 |
+|-----------------------------|-----------------------------------------------------------------------------------------------------------|
+| `APP/`                      |  Pasta principal da aplicação backend                                                     |
+| `config/`             | Arquivos de configuração do Sequelize.                |
+| `database.js`                 | Conecta ao banco PostgreSQL usando Sequelize                                                                   |
+| `controllers/`     |  Contém a lógica das rotas (regras de negócio)                                              |
+| `alunoController.js`     | CRUD de Alunos                                                   |
+| `professorController.js`                 | CRUD de Professores                   |
+| `materiaController.js`               | CRUD de Matérias                                  |
+| `models/`                | Models do Sequelize (definem as tabelas)  |
+| `aluno.js`                   | Model da tabela "Alunos"             |
+| `professor.js`                     | Model da tabela "Professores"                                   |
+| `materia.js`           | Model da tabela "Materias"                                                   |
+| `routes/`         | Define as rotas da API                                                                    |
+| ` alunoRoutes.js`       | Rotas para alunos (/alunos)                                                                   |
+| ` professorRoutes.js`            | Rotas para professores (/professores)                                                                        |
+| ` materiaRoutes.js`          | RRotas para matérias (/materias)                                                  |
+| `docker/`      | Configurações e scripts do PostgreSQL                                                    |
+| ` init.sql`           | Script que cria o banco e tabelas ao iniciar o container                                                             |
+| `.env`                   | Variáveis de ambiente (porta, banco, senha, etc)                                                   |
+| `Dockerfile`                     | Define como a aplicação Node.js será construída                                                          |
+| `docker-compose.yml`             | Orquestra os containers (backend + banco de dados)                                                                   |
+| `index.js`                   | Arquivo principal que inicia o servidor Express                                      |
+| `package.json`                   | Lista de dependências e scripts npm                                      |
+| `README.md`                  | Documentação do projeto                                          |
+
+---
+
+
+## 🎈 Containers e Imagens Docker <a name="containers-e-imagens-docker"></a>
+
+## ⚙ Containers da Aplicação
+
+| Container               | Dockerfile                             | Função                                                                 | Porta Interna |
+|-------------------------|-----------------------------------------|------------------------------------------------------------------------|-------|
+| `app (Backend Node.js com Express + Sequelize)`     | `./Dockerfile.app`        |Esse container instala as dependências (npm install), copia os arquivos da API, e executa node index.js | 3000 |
+| `db (PostgreSQL 14)`     | `postgres:14 (imagem oficial)`            | Contém o banco de dados PostgreSQL, com nome, usuário e senha definidos nas variáveis de ambiente | 5432 |
+| `nginx`  | `nginx:alpine`         | Proxy reverso que encaminha requisições HTTP para o backend na porta 3000                              | 80 |
+
+## 💾 Volumes Persistentes
+
+| Volume                         | Utilizado por                      | Finalidade                                          |
+|--------------------------------|------------------------------------|-----------------------------------------------------|
+| `pgdata` | `db`  | Persistência dos dados do banco PostgreSQL     |
+
+### 🌐 Redes
+
+Todos os containers estão conectados à rede Docker personalizada:
+
+### 🌍 Portas Expostas Externamente
+
+| Serviço     | Porta Interna | Porta Externa | Acesso Externo                      |
+|-------------|----------------|----------------|-------------------------------------|
+| NGINX       | 80             | **80**       |   http://localhost               |
+| PostgreSQL  | 5432           | **5433**       | utilizado por ORM/CLI               |
+
+[def]: #estrutura-de-diretorios-raiz
