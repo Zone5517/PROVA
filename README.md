@@ -134,6 +134,10 @@ Substitua os valores conforme necessário:
   ### 💻 Teste da Tabela  <a name="teste-tabela"></a>
 Exemplo
 ```js
-docker ps # ira listar todos os containers assim precisando copiar o nome que contenha a porta 5432:5433
-![Diagrama da rede Docker](./docker-ps.png)
+docker ps # ira listar todos os containers assim precisando copiar o nome que contenha a porta 5433:5432
 ```
+...
+# em seguida de o comando "docker exec -it  prova-main-db-1 bash" para se conectar a tabela
+# apos isso execute "psql -U postgres -d escola" e ira ficar no chat "escola=#"
+# e assim escrevendo "\dt" ira mostrar uma tabela com Alunos, professores e materia 
+![Tabela](./tabela.jpeg)
