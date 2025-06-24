@@ -15,8 +15,8 @@
   - [📒 Criar uma materia](#criar-materia)
 - [📆 Teste da Tabela (postgreSQL)](#teste-tabela)
 - [📚 Bibliotecas Utilizadas](#bibliotecas-utilizadas)
-- [🗂 Estrutura do projeto](estrutura-do-projeto)
-- [🎈 docker](docker)
+- [🗂 Estrutura do projeto](#estrutura-do-projeto)
+- [🎈 docker](#docker)
 
 ---
 
@@ -43,7 +43,7 @@
 3. Entrar na pasta do projeto:
 
    ```sh
-   cd '.\final 1.0\'
+   cd "PROVA-MAIN
    ```
 
 4. Instalar as dependências:
@@ -61,17 +61,15 @@
 6. Acesse a API no navegador ou em ferramentas como Insomnia/Postman:
 
    ```sh
-   Acesso à API:
+   Acesso à API: 
+    Você pode acessar os endpoints da API de duas formas:
+    Diretamente via porta do backend Node.js:
 
-Você pode acessar os endpoints da API de duas formas:
+    http://localhost:3000
 
-Diretamente via porta do backend Node.js:
+    Através do servidor NGINX (proxy reverso):
 
-http://localhost:3000
-
-Através do servidor NGINX (proxy reverso):
-
-http://localhost:8080
+    http://localhost:8080
    ```
 
    ## Acesse <a name="Testando API"></a>
@@ -166,7 +164,7 @@ ira listar todos os containers assim precisando copiar o nome que contenha a por
 ![Tabela](./tabela.jpeg)
 
 ```js
- apos isso voce ira conseguir acessar as informações de cada uma com o comando "SELECT * FROM "Alunos"; precisando so trocar Alunos por professor ou materia.
+ apos isso voce ira conseguir acessar as informações de cada uma com o comando SELECT * FROM "Alunos"; precisando so trocar Alunos por professor ou materia.
 ```
 
 ## 📚 Bibliotecas Utilizadas <a name="bibliotecas-utilizadas"></a>
