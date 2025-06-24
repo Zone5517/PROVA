@@ -15,8 +15,8 @@
   - [📒 Criar uma materia](#criar-materia)
 - [📆 Teste da Tabela (postgreSQL)](#teste-tabela)
 - [📚 Bibliotecas Utilizadas](#bibliotecas-utilizadas)
-- [🗂 Estrutura de Diretórios (raiz)](estrutura-de-diretorios-raiz)
-- [🎈 Containers e Imagens Docker](containers-e-imagens-docker)
+- [🗂 Estrutura do projeto](estrutura-do-projeto)
+- [🎈 docker](docker)
 
 ---
 
@@ -61,7 +61,17 @@
 6. Acesse a API no navegador ou em ferramentas como Insomnia/Postman:
 
    ```sh
-   http://localhost:3000
+   Acesso à API:
+
+Você pode acessar os endpoints da API de duas formas:
+
+Diretamente via porta do backend Node.js:
+
+http://localhost:3000
+
+Através do servidor NGINX (proxy reverso):
+
+http://localhost:8080
    ```
 
    ## Acesse <a name="Testando API"></a>
@@ -170,7 +180,7 @@ ira listar todos os containers assim precisando copiar o nome que contenha a por
 | `dotenv`           | Carregamento de variáveis de ambiente     |
 ---
 
-## 📁 Estrutura de Diretórios (raiz) <a name="estrutura-de-diretorios-raiz"></a>
+## 🗂 Estrutura do projeto (raiz) <a name="estrutura-do-projeto"></a>
 
 | Caminho / Pasta             | Descrição                                                                                                 |
 |-----------------------------|-----------------------------------------------------------------------------------------------------------|
@@ -201,7 +211,7 @@ ira listar todos os containers assim precisando copiar o nome que contenha a por
 ---
 
 
-## 🎈 Containers e Imagens Docker <a name="containers-e-imagens-docker"></a>
+## 🎈 Docker <a name="docker"></a>
 
 ## ⚙ Containers da Aplicação
 
